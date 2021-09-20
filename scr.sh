@@ -11,5 +11,5 @@ pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim grub sudo   &&
 genfstab -U /mnt >> /mnt/etc/fstab   &&
 
 cp arch-chroot-scr.sh /mnt/root/   &&
-arch-choot /mnt /bin/bash -c "chmod +x /root/arch-chroot-scr.sh && /root/arch-chroot-scr.sh" &&
+arch-chroot /mnt /bin/bash -c "chmod +x /root/arch-chroot-scr.sh && /root/arch-chroot-scr.sh" &&
 rm /mnt/root/arch-chroot-scr.sh
