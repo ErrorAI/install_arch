@@ -1,5 +1,5 @@
 #!/bin/bash
-sfdick -l             &&
+sfdisk -l             &&
 mkfs.ext2 /dev/sda1   &&
 mkswap /dev/sda2      &&
 mkfs.ext4 /dev/sda3   &&
