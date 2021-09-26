@@ -37,8 +37,8 @@ mkfs.ext4 /dev/sda3   &&
 swapon /dev/sda2      &&
 mount /dev/sda3 /mnt  &&
 
-pacman-key --refresh-keys
 reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist   &&
+pacman -Sy
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim grub sudo   &&
 
 genfstab -U /mnt >> /mnt/etc/fstab   &&
