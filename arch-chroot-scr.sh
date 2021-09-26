@@ -28,7 +28,7 @@ pacman -Syy
 pacman -S vim --noconfirm
 pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm
 
-pacman -S xfce4 xfce4-goodeis
+pacman -S xfce4 xfce4-goodies
 pacman -S lxdm --noconfirm
 
 systemctl enable lxdm
