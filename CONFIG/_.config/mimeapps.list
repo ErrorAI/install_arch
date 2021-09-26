@@ -1,0 +1,6 @@
+[Default Applications]
+x-scheme-handler/mailto=xfce4-mail-reader.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=xfce4-mail-reader.desktop;
+application/xml=org.xfce.mousepad.desktop;
