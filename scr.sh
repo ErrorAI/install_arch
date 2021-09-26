@@ -19,11 +19,11 @@
   echo;
   echo;
   
-  echo t;
+  echo t; #меняем тип 1го раздела на bios boot
   echo 1;
   echo 4;
   
-  echo t;
+  echo t; #меняем тип 2го раздела на linux swap
   echo 2;
   echo 19;
 
@@ -31,18 +31,18 @@
 ) | fdisk --wipe always /dev/sda
 
 
-mkfs.ext2 /dev/sda1   &&
-mkswap /dev/sda2      &&
-mkfs.ext4 /dev/sda3   &&
-swapon /dev/sda2      &&
-mount /dev/sda3 /mnt  &&
+mkfs.ext2 /dev/sda1   #форматируем boot
+mkswap /dev/sda2      #создаем swap
+mkfs.ext4 /dev/sda3   #форматируем основной раздел
+swapon /dev/sda2      #включаем swap
+mount /dev/sda3 /mnt  #монтируем основной раздел в /mnt
 
-reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist   &&
-pacman -Sy
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim grub sudo   &&
+reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist   #обновляем зеркала pacman
+pacman -Sy  #обновляем репозитории pacman
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd grub sudo  #ставим систему и некоторые программы
 
-genfstab -U /mnt >> /mnt/etc/fstab   &&
+genfstab -U /mnt >> /mnt/etc/fstab   #создаем файл fstab в основной раздел
 
-cp arch-chroot-scr.sh /mnt/root/   &&
+cp arch-chroot-scr.sh /mnt/root/
 arch-chroot /mnt /bin/bash -c "chmod +x /root/arch-chroot-scr.sh && /root/arch-chroot-scr.sh" &&
 rm /mnt/root/arch-chroot-scr.sh
