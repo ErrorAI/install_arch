@@ -15,24 +15,25 @@ mkinitcpio -p linux
 grub-install /dev/sda                 #установка grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "Print root password:"
+echo "Print root password:"           #пароль для root
 passwd
 
-useradd -m -g users -G wheel -s /bin/bash user1
-echo "Print user1 password:"
+useradd -m -g users -G wheel -s /bin/bash user1   #новый пользователь user1
+echo "Print user1 password:"                      #пароль для user1
 passwd user1
 
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers       #разрешаем группе wheel использовать sudo
 
-pacman -Syy
-pacman -S vim --noconfirm
-pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm
+pacman -Syy       #обновляем зеркала pacman 
 
-pacman -S xfce4 xfce4-goodies --noconfirm
-pacman -S lxdm --noconfirm
+pacman -S vim --noconfirm     #ставим vim
 
-systemctl enable lxdm
-systemctl enable dhcpcd
+pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm      #ставим Xorg исксы
+pacman -S xfce4 xfce4-goodies --noconfirm             #ставим окружение графическое
+pacman -S lxdm --noconfirm                            #ставим менеджер входа
 
-pacman -S ttf-liberation ttf-dejavu --noconfirm
+systemctl enable lxdm      #включаем менеджер как демона
+systemctl enable dhcpcd    #включаем демон dhcpcd
+
+pacman -S ttf-liberation ttf-dejavu --noconfirm    #ставим рекомендуемые шрифты с поддержкой кирилицы
 
