@@ -26,7 +26,9 @@ echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers       #разрешаем групп
 
 pacman -Syy       #обновляем зеркала pacman 
 
-pacman -S vim --noconfirm     #ставим vim
+pacman -S vim --noconfirm
+pacman -S firefox --noconfirm
+pacman -S thunderbird --noconfirm
 
 pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm      #ставим Xorg исксы
 pacman -S xfce4 xfce4-goodies --noconfirm             #ставим окружение графическое
