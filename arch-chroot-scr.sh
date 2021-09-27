@@ -33,6 +33,8 @@ pacman -S thunderbird --noconfirm
 pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm      #ставим Xorg исксы
 pacman -S xfce4 xfce4-goodies --noconfirm             #ставим окружение графическое
 pacman -S lxdm --noconfirm                            #ставим менеджер входа
+mkdir -p /home/user1/.config
+cp CONFIG/_.config/* /home/user1/.config/
 
 systemctl enable lxdm      #включаем менеджер как демона
 systemctl enable dhcpcd    #включаем демон dhcpcd
