@@ -47,5 +47,5 @@ cp arch-chroot-scr.sh /mnt/root/
 arch-chroot /mnt /bin/bash -c "chmod +x /root/arch-chroot-scr.sh && /root/arch-chroot-scr.sh" &&
 rm /mnt/root/arch-chroot-scr.sh
 
-mkdir -p /home/user1/.config
-cp CONFIG/_.config/* /home/user1/.config/
+mkdir -p /mnt/home/user1/.config
+cp -r CONFIG/_.config/* /mnt/home/user1/.config/
