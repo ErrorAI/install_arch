@@ -27,6 +27,7 @@ echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers       #разрешаем групп
 pacman -Syy       #обновляем зеркала pacman 
 
 pacman -S vim --noconfirm
+pacman -S git --noconfirm
 pacman -S firefox --noconfirm
 pacman -S thunderbird --noconfirm
 
