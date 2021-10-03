@@ -39,3 +39,8 @@ systemctl enable dhcpcd    #включаем демон dhcpcd
 
 pacman -S ttf-liberation ttf-dejavu --noconfirm    #ставим рекомендуемые шрифты с поддержкой кирилицы
 
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -R yay
