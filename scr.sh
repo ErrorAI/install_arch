@@ -51,7 +51,6 @@ mkdir -p /mnt/home/user1/.config
 cp -r CONFIG/_.config/* /mnt/home/user1/.config/
 cp -r CONFIG/_.gitconfig /mnt/home/user1/.gitconfig
 cp -r CONFIG/_.vimrc /mnt/home/user1/.vimrc
-cp -r CONFIG/_.git_ErrorAI_t /mnt/home/user1/.git_ErrorAI_t
 
 
 
