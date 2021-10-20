@@ -45,3 +45,7 @@ cd yay
 makepkg -si
 cd ..
 rm -Rf yay
+
+yay -S libcuba --noconfirm && echo "CUBA NOT Installed"
+
+pacman -S gcc-fortran --noconfirm
