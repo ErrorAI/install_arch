@@ -40,12 +40,4 @@ systemctl enable dhcpcd    #включаем демон dhcpcd
 
 pacman -S ttf-liberation ttf-dejavu --noconfirm    #ставим рекомендуемые шрифты с поддержкой кирилицы
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -Rf yay
-
-yay -S libcuba --noconfirm && echo "CUBA NOT Installed"
-
 pacman -S gcc-fortran --noconfirm

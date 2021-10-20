@@ -51,6 +51,9 @@ mkdir -p /mnt/home/user1/.config
 cp -r CONFIG/_.config/* /mnt/home/user1/.config/
 cp -r CONFIG/_.gitconfig /mnt/home/user1/.gitconfig
 cp -r CONFIG/_.vimrc /mnt/home/user1/.vimrc
+cp scr_aft_inst.sh /mnt/home/user1/scr_aft_inst.sh
 
-
-
+mkdir -p /mnt/home/user1/proj
+cd /mnt/home/user1/proj
+git clone https://github.com/ErrorAI/install_arch.git
+git clone https://github.com/ErrorAI/cpm_p_p-j-psi_glu.git
